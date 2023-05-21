@@ -37,7 +37,8 @@ app.post("/api/notes", (req, res) => {
       text,
     };
 
-    const noteString = JSON.stringify(newNote);
+    noteData.push(newNote);
+    const noteString = JSON.stringify(noteData);
 
     fs.writeFile(`./db/notes.json`, noteString, (err) =>
       err
