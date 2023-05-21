@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const noteData = require("./db/notes.json");
+const noteId = require("./helpers/noteid");
 const fs = require("fs");
 // const uuid = require("./helpers/uuid");
 
@@ -25,16 +26,18 @@ app.get("/notes", (req, res) => {
 
 app.get("/api/notes", (req, res) => {
   res.json(noteData);
-  console.log(noteData);
+  //   console.log(noteData);
 });
 
 app.post("/api/notes", (req, res) => {
   console.info(`${req.method} request received to add a note`);
   const { title, text } = req.body;
+  console.log(req.body);
   if (title && text) {
     const newNote = {
       title,
       text,
+      id: noteId(),
     };
 
     noteData.push(newNote);
