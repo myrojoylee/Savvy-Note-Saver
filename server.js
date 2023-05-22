@@ -3,7 +3,6 @@ const path = require("path");
 const noteData = require("./db/notes.json");
 const noteId = require("./helpers/noteid");
 const fs = require("fs");
-// const uuid = require("./helpers/uuid");
 
 const PORT = 3001;
 
@@ -15,24 +14,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  console.log(`i am the best`);
   res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
 app.get("/notes", (req, res) => {
-  console.log(`Notes file!`);
   res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
 app.get("/api/notes", (req, res) => {
   res.json(noteData);
-  //   console.log(noteData);
 });
 
 app.post("/api/notes", (req, res) => {
-  console.info(`${req.method} request received to add a note`);
   const { title, text } = req.body;
-  console.log(req.body);
   if (title && text) {
     const newNote = {
       title,
@@ -46,7 +40,7 @@ app.post("/api/notes", (req, res) => {
     fs.writeFile(`./db/notes.json`, noteString, (err) =>
       err
         ? console.log(err)
-        : console.log(`Note for ${newNote.title} has been saved?`)
+        : console.log(`Note for ${newNote.title} has been saved!`)
     );
 
     const response = {
@@ -59,6 +53,18 @@ app.post("/api/notes", (req, res) => {
   } else {
     res.status(500).json("Error in posting note");
   }
+});
+
+app.delete("/api/notes/:id", (req, res) => {
+  const idToDelete = req.params.id;
+  const afterDelete = noteData.filter((note) => note.id !== idToDelete);
+
+  const noteString = JSON.stringify(afterDelete);
+  console.log(`After the filter, we get: ${noteString}`);
+  fs.writeFile(`./db/notes.json`, noteString, (err) =>
+    err ? console.log(err) : console.log(`New note for has been saved!`)
+  );
+  return res.send();
 });
 
 app.listen(PORT, () => {
