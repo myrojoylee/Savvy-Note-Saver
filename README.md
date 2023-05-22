@@ -2,7 +2,9 @@
 
 ## Description
 
-This assignment introduces us to Express.js (Express), which, as defined, is considered the "de facto standard server framework for Node.js".
+This assignment introduces us to Express.js (Express), which, as defined, is considered the "de facto standard server framework for Node.js". It is used to build a more robust web app with backend functionality with a built-in Fetch API package.
+
+In this work, the frontend was built and we connected Express in order to build the server side. Notes can be added and deleted.
 
 WIP! Follow the progress below:
 
@@ -28,7 +30,18 @@ BONUS functionality:
 
 REFACTOR
 
+- [ ] Add comments where appropriate.
+- [ ] Delete unnecessary lines.
+
 ## Installation
+
+- This is a [Node.js](https://nodejs.org/en) application. It is recommended to use at least v16 (up to v18) for this app to run correctly.
+- [Nodemon](https://www.npmjs.com/package/nodemon) is optional but is highly recommended while building and testing your server. Once in your project folder, type in `npm install nodemon`. When running your server, nodemon serves as a wrapper so instead of typing `node server.js` to run your server, instead type in `nodemon server.js`. Then every time your file is saved during that same work session, you do not need to restart your server as nodemon detects these changes for you.
+- This was built on [Express](https://expressjs.com/). Once in your project folder, type in `npm install` to install the dependency listed in the `package.json` file.
+
+### Additional Optional Resources
+
+- [Postman](https://www.postman.com/) is optional but highly recommended when testing out APIs.
 
 ## Usage
 
