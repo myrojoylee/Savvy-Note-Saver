@@ -1,8 +1,9 @@
 const express = require("express");
 const path = require("path");
-const noteData = require("./db/notes.json");
+const noteDataImport = require("./db/notes.json");
 const noteId = require("./helpers/noteid");
 const fs = require("fs");
+let noteData = noteDataImport;
 
 const PORT = 3001;
 
@@ -57,14 +58,14 @@ app.post("/api/notes", (req, res) => {
 
 app.delete("/api/notes/:id", (req, res) => {
   const idToDelete = req.params.id;
-  const afterDelete = noteData.filter((note) => note.id !== idToDelete);
+  noteData = noteData.filter((note) => note.id !== idToDelete);
 
-  const noteString = JSON.stringify(afterDelete);
+  const noteString = JSON.stringify(noteData);
   console.log(`After the filter, we get: ${noteString}`);
-  fs.writeFile(`./db/notes.json`, noteString, (err) =>
-    err ? console.log(err) : console.log(`New note for has been saved!`)
-  );
-  return res.send();
+  fs.writeFile(`./db/notes.json`, noteString, (err) => {
+    err ? console.log(err) : console.log(`New note for has been saved!`);
+    res.send();
+  });
 });
 
 app.listen(PORT, () => {
