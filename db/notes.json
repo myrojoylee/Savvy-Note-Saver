@@ -1,1 +1,7 @@
-[{ "title": "sample note one", "text": "note detail one", "id": "abc1" }]
+[
+  {
+    "title": "Make dr appointments",
+    "text": "Tomorrow, 4/4",
+    "id": "abc123"
+  }
+]
