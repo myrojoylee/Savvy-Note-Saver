@@ -4,7 +4,7 @@
 
 This assignment introduces us to Express.js (Express), which, as defined, is considered the "de facto standard server framework for Node.js". It is used to build a more robust web app with backend functionality with a built-in Fetch API package.
 
-In this work, the frontend was built and we used Express in order to build the server side. The application was then deployed on Heroku.
+In this work, the frontend was built and we used Express in order to build the server side along with modular routing to organize our routes. The application was then deployed on Heroku.
 
 ## Installation
 
