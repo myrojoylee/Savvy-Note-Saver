@@ -24,6 +24,12 @@ In this work, the frontend was built and we used Express in order to build the s
 
 <img src="https://github.com/myrojoylee/savvy-note-saver/blob/main/public/assets/images/savvy-note-saver-demo.gif" width = "700" />
 
+## Credits/Acknowledgments
+
+- Thank you to the following who helped test and give insight:
+  - [Jake Duncan](https://github.com/jjsdunc88)
+  - [Eduardo Vazquez](https://github.com/vazquezea96)
+
 ## License
 
 - Refer to license in the repository.
