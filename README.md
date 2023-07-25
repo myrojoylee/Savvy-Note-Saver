@@ -18,8 +18,6 @@ In this work, the frontend was built and we used Express in order to build the s
 
 ## Usage
 
-- First, visit the live app [here](https://savvy-note-taker.herokuapp.com/).
-
 - Click on the "Get Started" blue button. Once there, add notes by typing into the field and clicking the :floppy_disk: icon in the top right. Navigate through previous notes on the left and delete them by clicking on the :wastebasket: icon. This functionality is represented by the gif demo below:
 
 <img src="https://github.com/myrojoylee/savvy-note-saver/blob/main/public/assets/images/savvy-note-saver-demo.gif" width = "700" />
